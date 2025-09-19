@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tulika.io - Smart Notes</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <div class="brand">
+                <i class="fas fa-sticky-note"></i>
+                <span>Tulika.io</span>
+            </div>
+            <button id="sidebar-toggle-btn" class="nav-btn" title="Toggle Sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="nav-center">
+            <div id="currentPath" class="breadcrumb">
+                <span class="command-hint">Press Ctrl+K for commands</span>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <button id="preview-toggle" class="nav-btn" title="Toggle Preview">
+                <i class="fas fa-eye"></i>
+                <span>Preview</span>
+            </button>
+            <button id="dark-mode-toggle" class="nav-btn" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div id="user-info" class="user-section">
+                <!-- User info will be populated by JS -->
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-container">
+        <!-- Enhanced Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-folder-tree"></i> Files & Folders</h3>
+                <div class="action-buttons">
+                    <button id="new-file-btn" class="action-btn" title="New File">
+                        <i class="fas fa-file-plus"></i>
+                        <span>File</span>
+                    </button>
+                    <button id="new-folder-btn" class="action-btn" title="New Folder">
+                        <i class="fas fa-folder-plus"></i>
+                        <span>Folder</span>
+                    </button>
+                    <button id="collapseAll" class="action-btn secondary" title="Collapse All">
+                        <i class="fas fa-compress-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="treeRoot" class="file-tree"></div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main id="content-area">
+            <div id="editor-section">
+                <div class="editor-header">
+                    <div class="editor-tabs">
+                        <div class="tab active">
+                            <i class="fas fa-edit"></i>
+                            <span id="current-file-name">Untitled</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="editor-container">
+                    <textarea id="editor" placeholder="Select a file to start typing your notes..."></textarea>
+                    <div id="preview" class="markdown-body hidden"></div>
+                </div>
+                
+                <div class="status-bar">
+                    <div class="status-left">
+                        <span id="word-count">0 words</span>
+                        <span class="separator">•</span>
+                        <span id="char-count">0 characters</span>
+                    </div>
+                    <div class="status-right">
+                        <span id="save-status">All changes saved</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Right-Click Options Modal -->
+    <div id="modalOverlay" class="modal-overlay"></div>
+    <div id="optionsModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-header">
+            <h3>File Options</h3>
+            <button class="modal-close" id="modal-close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group">
+                <label for="renameInput">File Name</label>
+                <input id="renameInput" type="text" placeholder="Enter new name..." />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="renameBtn" class="btn btn-primary">
+                <i class="fas fa-edit"></i>
+                Rename
+            </button>
+            <button id="deleteBtn" class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+                Delete
+            </button>
+            <button id="cancelBtn" class="btn btn-secondary">
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <!-- Command Palette Modal -->
+    <div id="command-palette-overlay" class="modal-overlay hidden"></div>
+    <div id="command-palette" class="command-modal hidden">
+        <div class="command-input-wrapper">
+            <i class="fas fa-terminal"></i>
+            <input id="command-input" type="text" placeholder="Type a command (e.g., 'new file', 'new folder')...">
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
