@@ -38,9 +38,10 @@
             formData.append('action', 'login');
             formData.append('username', document.getElementById('username').value);
             formData.append('password', document.getElementById('password').value);
-
+            
             try {
-                const response = await fetch('api/auth.php', { method: 'POST', body: formData });
+                const response = await fetch('http://localhost/tulika/auth.php', { method: 'POST', body: formData });
+                console.log(formData);
                 const result = await response.json();
 
                 if (result.success) {

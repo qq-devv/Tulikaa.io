@@ -65,7 +65,7 @@
             try {
                 debugLog('Attempting to connect to: api/auth.php');
                 
-                const response = await fetch('api/auth.php', { 
+                const response = await fetch('http://localhost/tulika/auth.php', { 
                     method: 'POST', 
                     body: formData 
                 });
@@ -105,7 +105,7 @@
         window.addEventListener('load', async () => {
             debugLog('Page loaded, testing server connectivity...');
             try {
-                const response = await fetch('api/auth.php?action=status');
+                const response = await fetch('http://localhost/tulika/auth.php?action=status');
                 debugLog(`Status check response: ${response.status}`);
                 if (response.ok) {
                     debugLog('Server is reachable!');

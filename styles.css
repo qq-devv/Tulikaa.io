@@ -674,7 +674,8 @@ body.dark-mode .markdown-body h2,
 body.dark-mode .markdown-body h3,
 body.dark-mode .markdown-body h4,
 body.dark-mode .markdown-body h5,
-body.dark-mode .markdown-body h6 {
+body.dark-mode .markdown-body h6,
+body.dark-mode .markdown-body li {
     color: var(--text-primary);
 }
 
