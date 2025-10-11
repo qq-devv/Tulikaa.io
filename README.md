@@ -66,14 +66,3 @@ Tulika is a comprehensive project developed for the Bachelor of Computer Applica
 👨‍💻 Developed by Dev Bheda
 
 We hope you enjoy using Tulika as much as we enjoyed building it! Happy Note-Taking! ✍️
-
----
-
-Why this new version is better:
-
-1. Professional Structure: It uses clear headings, bullet points, and sections, making it easy to read and navigate.
-2. Visual Appeal: I've added a placeholder for a banner image and used emojis in the headings to make it more engaging.
-3. Categorized Features: The features are grouped logically (Security, Editor, File Management, etc.), which is easier to digest than one long paragraph.
-4. Clearer Warnings: The note about the missing trash bin is placed in a highlighted box for emphasis.
-5. Actionable "Getting Started" Guide: This section is crucial for anyone who wants to run your project. I've provided a template you can easily fill out.
-6. Highlights Your Learning: The "Project Context" section explicitly connects the project to your BCA coursework, which is excellent for academic presentations.
